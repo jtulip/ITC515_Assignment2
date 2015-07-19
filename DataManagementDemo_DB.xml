@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
   <unitTable>
-    <unit uid="ITC515" name="Programming Practice" ps="50" cr="65" di="75" hd="85" ae="45" />
-    <unit uid="ITC508" name="Systems Analysis" ps="50" cr="65" di="75" hd="85" ae="45" />
-    <unit uid="ITC517" name="Software Engineering" ps="50" cr="65" di="75" hd="85" ae="45" />
+    <unit uid="ITC515" name="Programming Practice" ps="50" cr="65" di="75" hd="85" ae="45" asg1wgt="20" asg2wgt="30" examwgt="50" />
+    <unit uid="ITC508" name="Systems Analysis" ps="50" cr="65" di="75" hd="85" ae="45" asg1wgt="30" asg2wgt="20" examwgt="50" />
+    <unit uid="ITC517" name="Software Engineering" ps="50" cr="65" di="75" hd="85" ae="45" asg1wgt="30" asg2wgt="30" examwgt="40" />
   </unitTable>
   <studentTable>
     <student sid="1" fname="John" lname="Smith" />
@@ -13,7 +13,7 @@
     <student sid="5" fname="Mark" lname="Bennett" />
   </studentTable>
   <studentUnitRecordTable>
-    <record sid="1" uid="ITC515" asg1="51" asg2="51" exam="0" />
+    <record sid="1" uid="ITC515" asg1="18.0" asg2="27.0" exam="50.0" />
     <record sid="3" uid="ITC515" asg1="13.0" asg2="12.0" exam="25.0" />
     <record sid="4" uid="ITC515" asg1="10" asg2="10" exam="24" />
     <record sid="1" uid="ITC508" asg1="0.0" asg2="0.0" exam="25.0" />

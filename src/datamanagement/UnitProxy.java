@@ -46,4 +46,17 @@ um.getUnit(UC).addStudentRecord(record);
     public IStudentUnitRecord getStudentRecord(int s) {return um.getUnit(UC).getStudentRecord(s);}
 public StudentUnitRecordList listStudentRecords() {
     return um.getUnit(UC).listStudentRecords();
+}
+public int getAsg1Weight() {
+	return um.getUnit(UC).getAsg1Weight();
+}
+public int getAsg2Weight() {
+	return um.getUnit(UC).getAsg2Weight();
+}
+public int getExamWeight() {
+	return um.getUnit(UC).getExamWeight();
+}
+public void setAssessmentWeights(int asg1Wgt, int asg2Wgt, int examWgt) {
+	um.getUnit(UC).setAssessmentWeights(asg1Wgt, asg2Wgt, examWgt);
+	
 }}
