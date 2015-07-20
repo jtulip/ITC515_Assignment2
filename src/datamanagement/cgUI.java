@@ -49,11 +49,9 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jTextField1 = new javax.swing.JTextField();
 		jTextField2 = new javax.swing.JTextField();
 		jTextField3 = new javax.swing.JTextField();
-		jButton1 = new javax.swing.JButton();
-		jButton2 = new javax.swing.JButton();
+		btnChangeGrade = new javax.swing.JButton();
 		jPanel4 = new javax.swing.JPanel();
 		jLabel5 = new javax.swing.JLabel();
-		jButton3 = new javax.swing.JButton();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -156,141 +154,66 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 			}
 		});
 
-		jButton1.setText("Change");
-		jButton1.addActionListener(new java.awt.event.ActionListener() {
+		btnChangeGrade.setText("Change");
+		btnChangeGrade.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 			}
 		});
-
-		jButton2.setText("Save");
-		jButton2.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton2ActionPerformed(evt);
-			}
-		});
+		btnCheckGrade = new javax.swing.JButton();
+		
+				btnCheckGrade.setText("Check Grade");
+				btnCheckGrade.setActionCommand("checkGrade");
+				btnCheckGrade.addActionListener(new java.awt.event.ActionListener() {
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						jButton3ActionPerformed(evt);
+					}
+				});
 
 		javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(
 				jPanel3);
+		jPanel3Layout.setHorizontalGroup(
+			jPanel3Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel3Layout.createSequentialGroup()
+					.addGroup(jPanel3Layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(jPanel3Layout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(jLabel2)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(jLabel3))
+						.addGroup(jPanel3Layout.createSequentialGroup()
+							.addGap(85)
+							.addComponent(btnChangeGrade, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)))
+					.addGap(18)
+					.addGroup(jPanel3Layout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(jPanel3Layout.createSequentialGroup()
+							.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(jLabel4))
+						.addComponent(btnCheckGrade))
+					.addGap(18)
+					.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
+					.addGap(15))
+		);
+		jPanel3Layout.setVerticalGroup(
+			jPanel3Layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(jPanel3Layout.createSequentialGroup()
+					.addGroup(jPanel3Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jLabel2)
+						.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jLabel3)
+						.addComponent(jTextField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jLabel4)
+						.addComponent(jTextField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(jPanel3Layout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnChangeGrade)
+						.addComponent(btnCheckGrade))
+					.addContainerGap())
+		);
 		jPanel3.setLayout(jPanel3Layout);
-		jPanel3Layout
-				.setHorizontalGroup(jPanel3Layout
-						.createParallelGroup(
-								javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(
-								jPanel3Layout
-										.createSequentialGroup()
-										.addGroup(
-												jPanel3Layout
-														.createParallelGroup(
-																javax.swing.GroupLayout.Alignment.LEADING)
-														.addGroup(
-																jPanel3Layout
-																		.createSequentialGroup()
-																		.addContainerGap()
-																		.addComponent(
-																				jLabel2)
-																		.addPreferredGap(
-																				javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-																		.addComponent(
-																				jTextField1,
-																				javax.swing.GroupLayout.PREFERRED_SIZE,
-																				59,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addGap(18,
-																				18,
-																				18)
-																		.addComponent(
-																				jLabel3))
-														.addGroup(
-																jPanel3Layout
-																		.createSequentialGroup()
-																		.addGap(85,
-																				85,
-																				85)
-																		.addComponent(
-																				jButton1,
-																				javax.swing.GroupLayout.PREFERRED_SIZE,
-																				84,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addGroup(
-												jPanel3Layout
-														.createParallelGroup(
-																javax.swing.GroupLayout.Alignment.LEADING)
-														.addGroup(
-																jPanel3Layout
-																		.createSequentialGroup()
-																		.addGap(18,
-																				18,
-																				18)
-																		.addComponent(
-																				jTextField2,
-																				javax.swing.GroupLayout.PREFERRED_SIZE,
-																				59,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)
-																		.addGap(18,
-																				18,
-																				18)
-																		.addComponent(
-																				jLabel4)
-																		.addGap(18,
-																				18,
-																				18)
-																		.addComponent(
-																				jTextField3,
-																				javax.swing.GroupLayout.PREFERRED_SIZE,
-																				59,
-																				javax.swing.GroupLayout.PREFERRED_SIZE))
-														.addGroup(
-																jPanel3Layout
-																		.createSequentialGroup()
-																		.addGap(53,
-																				53,
-																				53)
-																		.addComponent(
-																				jButton2,
-																				javax.swing.GroupLayout.PREFERRED_SIZE,
-																				86,
-																				javax.swing.GroupLayout.PREFERRED_SIZE)))
-										.addGap(15, 15, 15)));
-		jPanel3Layout
-				.setVerticalGroup(jPanel3Layout
-						.createParallelGroup(
-								javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(
-								jPanel3Layout
-										.createSequentialGroup()
-										.addGroup(
-												jPanel3Layout
-														.createParallelGroup(
-																javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(jLabel2)
-														.addComponent(
-																jTextField1,
-																javax.swing.GroupLayout.PREFERRED_SIZE,
-																javax.swing.GroupLayout.DEFAULT_SIZE,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(jLabel3)
-														.addComponent(
-																jTextField2,
-																javax.swing.GroupLayout.PREFERRED_SIZE,
-																javax.swing.GroupLayout.DEFAULT_SIZE,
-																javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addComponent(jLabel4)
-														.addComponent(
-																jTextField3,
-																javax.swing.GroupLayout.PREFERRED_SIZE,
-																javax.swing.GroupLayout.DEFAULT_SIZE,
-																javax.swing.GroupLayout.PREFERRED_SIZE))
-										.addPreferredGap(
-												javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addGroup(
-												jPanel3Layout
-														.createParallelGroup(
-																javax.swing.GroupLayout.Alignment.BASELINE)
-														.addComponent(jButton1)
-														.addComponent(jButton2))
-										.addContainerGap()));
 
 		jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Grade"));
 
@@ -311,30 +234,30 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 				jPanel4Layout.createSequentialGroup().addGap(34, 34, 34)
 						.addComponent(jLabel5)
 						.addContainerGap(43, Short.MAX_VALUE)));
-
-		jButton3.setText("Check Grade");
-		jButton3.setActionCommand("checkGrade");
-		jButton3.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton3ActionPerformed(evt);
-			}
-		});
 		
 		lblErrMsg = new JLabel();
 		lblErrMsg.setText("Error message");
 		lblErrMsg.setForeground(Color.RED);
 		lblErrMsg.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnSaveGrade = new javax.swing.JButton();
+		
+				btnSaveGrade.setText("Save");
+				btnSaveGrade.addActionListener(new java.awt.event.ActionListener() {
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						jButton2ActionPerformed(evt);
+					}
+				});
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
 				getContentPane());
 		layout.setHorizontalGroup(
 			layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(layout.createSequentialGroup()
-					.addGroup(layout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+						.addGroup(layout.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblErrMsg, GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
-						.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+						.addGroup(layout.createSequentialGroup()
 							.addContainerGap()
 							.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(jPanel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -344,12 +267,12 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 										.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 									.addGap(18)
 									.addComponent(jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-						.addGroup(Alignment.LEADING, layout.createSequentialGroup()
-							.addGap(161)
-							.addComponent(jButton3))
-						.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+						.addGroup(layout.createSequentialGroup()
 							.addGap(157)
-							.addComponent(jLabel1)))
+							.addComponent(jLabel1))
+						.addGroup(layout.createSequentialGroup()
+							.addGap(165)
+							.addComponent(btnSaveGrade, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap())
 		);
 		layout.setVerticalGroup(
@@ -367,8 +290,8 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(jButton3)
-					.addGap(18)
+					.addComponent(btnSaveGrade)
+					.addGap(11)
 					.addComponent(lblErrMsg, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
@@ -491,26 +414,29 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jTextField3.setEditable(false);
 	}
 
-	public void setState3(boolean b) {
-		jButton3.setEnabled(b);
+	public void setCheckBtnEnable(boolean b) {
+		btnCheckGrade.setEnabled(b);
 	}
 
-	public void setState4(boolean b) {
-		jButton1.setEnabled(b);
+	public void setChangeBtnEnable(boolean b) {
+		btnChangeGrade.setEnabled(b);
 		// gradeLB.setText("");
 	}
 
-	public void setState5(boolean b) {
+	public void setMarkFieldsEditable(boolean b) {
 		jTextField1.setEditable(b);
 		jTextField2.setEditable(b);
 		jTextField3.setEditable(b);
-		jButton2.setEnabled(b);
+	}
+
+	public void setSaveBtnEnable(boolean b) {
+		btnSaveGrade.setEnabled(b);
 	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private javax.swing.JButton jButton1;
-	private javax.swing.JButton jButton2;
-	private javax.swing.JButton jButton3;
+	private javax.swing.JButton btnChangeGrade;
+	private javax.swing.JButton btnSaveGrade;
+	private javax.swing.JButton btnCheckGrade;
 	private javax.swing.JComboBox jComboBox1;
 	private javax.swing.JComboBox jComboBox2;
 	private javax.swing.JLabel jLabel1;
