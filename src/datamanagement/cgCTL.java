@@ -5,6 +5,7 @@ public class cgCTL {
 	cgUI cgUI;
 	String cuc = null;
 	Integer currentStudentID = null;
+	boolean changed = false;
 
 	public cgCTL() {
 	}
@@ -14,9 +15,10 @@ public class cgCTL {
 		cgUI.setState1(false);
 
 		cgUI.setState2(false);
-		cgUI.setState3(false);
-		cgUI.setState4(false);
-		cgUI.setState5(false);
+		cgUI.setCheckBtnEnable(false);
+		cgUI.setChangeBtnEnable(false);
+		cgUI.setMarkFieldsEditable(false);
+		cgUI.setSaveBtnEnable(false);
 		cgUI.Refresh3();
 
 		ListUnitsCTL luCTL = new ListUnitsCTL();
@@ -35,17 +37,17 @@ public class cgCTL {
 			cuc = code;
 			cgUI.setState2(true);
 		}
-		cgUI.setState3(false);
+		cgUI.setCheckBtnEnable(false);
 	}
 
 	public void studentSelected(Integer id) {
 		currentStudentID = id;
 		if (currentStudentID.intValue() == 0) {
 			cgUI.Refresh3();
-			cgUI.setState3(false);
-			cgUI.setState4(false);
-
-			cgUI.setState5(false);
+			cgUI.setCheckBtnEnable(false);
+			cgUI.setChangeBtnEnable(false);
+			cgUI.setMarkFieldsEditable(false);
+			cgUI.setSaveBtnEnable(false);
 		}
 
 		else {
@@ -54,9 +56,11 @@ public class cgCTL {
 			IStudentUnitRecord r = s.getUnitRecord(cuc);
 
 			cgUI.setRecord(r);
-			cgUI.setState3(true);
-			cgUI.setState4(true);
-			cgUI.setState5(false);
+			cgUI.setCheckBtnEnable(true);
+			cgUI.setChangeBtnEnable(true);
+			cgUI.setMarkFieldsEditable(false);
+			cgUI.setSaveBtnEnable(false);
+			changed = false;
 
 		}
 	}
@@ -64,13 +68,19 @@ public class cgCTL {
 	public String checkGrade(float f, float g, float h) {
 		IUnit u = UnitManager.UM().getUnit(cuc);
 		String s = u.getGrade(f, g, h);
+		cgUI.setChangeBtnEnable(true);
+		cgUI.setMarkFieldsEditable(false);
+		if (changed) {
+			cgUI.setSaveBtnEnable(true);
+		}
 		return s;
 	}
 
 	public void enableChangeMarks() {
-
-		cgUI.setState4(false);
-		cgUI.setState5(true);
+		cgUI.setChangeBtnEnable(false);
+		cgUI.setSaveBtnEnable(false);
+		cgUI.setMarkFieldsEditable(true);
+		changed = true;
 	}
 
 	public void saveGrade(float asg1, float asg2, float exam) {
@@ -83,9 +93,8 @@ public class cgCTL {
 		r.setAsg2(asg2);
 		r.setExam(exam);
 		StudentUnitRecordManager.instance().saveRecord(r);
-		cgUI.setState4(true);
-
-		cgUI.setState5(false);
+		cgUI.setChangeBtnEnable(true);
+		cgUI.setMarkFieldsEditable(false);
 
 	}
 }
