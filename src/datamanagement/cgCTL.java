@@ -2,7 +2,7 @@ package datamanagement;
 
 public class cgCTL {
 
-	cgUI cgUI;
+	cgUI CGUI;
 	String cuc = null;
 	Integer currentStudentID = null;
 
@@ -10,42 +10,42 @@ public class cgCTL {
 	}
 
 	public void execute() {
-		cgUI = new cgUI(this);
-		cgUI.setState1(false);
+		CGUI = new cgUI(this);
+		CGUI.setState1(false);
 
-		cgUI.setState2(false);
-		cgUI.setState3(false);
-		cgUI.setState4(false);
-		cgUI.setState5(false);
-		cgUI.Refresh3();
+		CGUI.setState2(false);
+		CGUI.setState3(false);
+		CGUI.setState4(false);
+		CGUI.setState5(false);
+		CGUI.Refresh3();
 
 		ListUnitsCTL luCTL = new ListUnitsCTL();
-		luCTL.listUnits(cgUI);
-		cgUI.setVisible(true);
-		cgUI.setState1(true);
+		luCTL.listUnits(CGUI);
+		CGUI.setVisible(true);
+		CGUI.setState1(true);
 	}
 
 	public void unitSelected(String code) {
 
 		if (code.equals("NONE"))
-			cgUI.setState2(false);
+			CGUI.setState2(false);
 		else {
 			ListStudentsCTL lsCTL = new ListStudentsCTL();
-			lsCTL.listStudents(cgUI, code);
+			lsCTL.listStudents(CGUI, code);
 			cuc = code;
-			cgUI.setState2(true);
+			CGUI.setState2(true);
 		}
-		cgUI.setState3(false);
+		CGUI.setState3(false);
 	}
 
 	public void studentSelected(Integer id) {
 		currentStudentID = id;
 		if (currentStudentID.intValue() == 0) {
-			cgUI.Refresh3();
-			cgUI.setState3(false);
-			cgUI.setState4(false);
+			CGUI.Refresh3();
+			CGUI.setState3(false);
+			CGUI.setState4(false);
 
-			cgUI.setState5(false);
+			CGUI.setState5(false);
 		}
 
 		else {
@@ -53,10 +53,10 @@ public class cgCTL {
 
 			IStudentUnitRecord r = s.getUnitRecord(cuc);
 
-			cgUI.setRecord(r);
-			cgUI.setState3(true);
-			cgUI.setState4(true);
-			cgUI.setState5(false);
+			CGUI.setRecord(r);
+			CGUI.setState3(true);
+			CGUI.setState4(true);
+			CGUI.setState5(false);
 
 		}
 	}
@@ -69,8 +69,8 @@ public class cgCTL {
 
 	public void enableChangeMarks() {
 
-		cgUI.setState4(false);
-		cgUI.setState5(true);
+		CGUI.setState4(false);
+		CGUI.setState5(true);
 	}
 
 	public void saveGrade(float asg1, float asg2, float exam) {
@@ -83,9 +83,9 @@ public class cgCTL {
 		r.setAsg2(asg2);
 		r.setExam(exam);
 		StudentUnitRecordManager.instance().saveRecord(r);
-		cgUI.setState4(true);
+		CGUI.setState4(true);
 
-		cgUI.setState5(false);
+		CGUI.setState5(false);
 
 	}
 }

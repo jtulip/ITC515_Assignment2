@@ -25,7 +25,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		initComponents();
 		jComboBox1.setModel(uM);
 		jComboBox2.setModel(rM);
-		lblErrMsg.setText("");
+		jlabel6.setText("");
 	}
 
 	/**
@@ -320,10 +320,10 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 			}
 		});
 		
-		lblErrMsg = new JLabel();
-		lblErrMsg.setText("Error message");
-		lblErrMsg.setForeground(Color.RED);
-		lblErrMsg.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		jlabel6 = new JLabel();
+		jlabel6.setText("Error message");
+		jlabel6.setForeground(Color.RED);
+		jlabel6.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
 				getContentPane());
@@ -333,7 +333,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 					.addGroup(layout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(Alignment.LEADING, layout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(lblErrMsg, GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
+							.addComponent(jlabel6, GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
 						.addGroup(Alignment.LEADING, layout.createSequentialGroup()
 							.addContainerGap()
 							.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
@@ -369,7 +369,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(jButton3)
 					.addGap(18)
-					.addComponent(lblErrMsg, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addComponent(jlabel6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		getContentPane().setLayout(layout);
@@ -413,7 +413,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 			jLabel5.setText(s);
 		}
 		catch (RuntimeException re) {
-			lblErrMsg.setText(re.getMessage());
+			jlabel6.setText(re.getMessage());
 		}
 	}// GEN-LAST:event_jButton3ActionPerformed
 
@@ -425,20 +425,20 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 
 	private void jTextFieldKeyTyped(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_jTextField1KeyTyped
 		jLabel5.setText("");
-		lblErrMsg.setText("");
+		jlabel6.setText("");
 	}// GEN-LAST:event_jTextField1KeyTyped
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
 		float asg1 = new Float(jTextField1.getText()).floatValue();
 		float asg2 = new Float(jTextField2.getText()).floatValue();
 		float exam = new Float(jTextField3.getText()).floatValue();
-		lblErrMsg.setText("");
+		jlabel6.setText("");
 		try {
 			ctl.saveGrade(asg1, asg2, exam);
 			//jButton3ActionPerformed(null);
 		}
 		catch (RuntimeException re) {
-			lblErrMsg.setText(re.getMessage());
+			jlabel6.setText(re.getMessage());
 		}
 	}// GEN-LAST:event_jButton2ActionPerformed
 
@@ -454,7 +454,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 
 	public void setState1(boolean b) {
 		jComboBox1.setEnabled(b);
-		lblErrMsg.setText("");
+		jlabel6.setText("");
 	}
 
 	public void clearStudents() {
@@ -469,7 +469,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 
 	public void setState2(boolean b) {
 		jComboBox2.setEnabled(b);
-		lblErrMsg.setText("");
+		jlabel6.setText("");
 	}
 
 	public void setRecord(IStudentUnitRecord record) {
@@ -485,7 +485,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 		jTextField2.setText("");
 		jTextField3.setText("");
 		jLabel5.setText("");
-		lblErrMsg.setText("");
+		jlabel6.setText("");
 		jTextField1.setEditable(false);
 		jTextField2.setEditable(false);
 		jTextField3.setEditable(false);
@@ -518,7 +518,7 @@ public class cgUI extends javax.swing.JFrame implements IUnitLister,
 	private javax.swing.JLabel jLabel3;
 	private javax.swing.JLabel jLabel4;
 	private javax.swing.JLabel jLabel5;
-	private javax.swing.JLabel lblErrMsg;
+	private javax.swing.JLabel jlabel6;
 	private javax.swing.JPanel jPanel1;
 	private javax.swing.JPanel jPanel2;
 	private javax.swing.JPanel jPanel3;
