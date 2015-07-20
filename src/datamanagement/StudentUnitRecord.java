@@ -1,69 +1,67 @@
 package datamanagement;
 
 public class StudentUnitRecord implements IStudentUnitRecord {
-	private Integer studentID;
-	private String unitCode;
-	private float asg1;
-	private float asg2;
-	private float exam;
+	private Integer sid;
+	private String uc;
+	private float a1, a2, ex;
 
 	public StudentUnitRecord(Integer id, String code, float asg1, float asg2,
 			float exam) {
-		this.studentID = id;
-		this.unitCode = code;
+		this.sid = id;
+		this.uc = code;
 		this.setAsg1(asg1);
 		this.setAsg2(asg2);
 		this.setExam(exam);
 	}
 
 	public Integer getStudentID() {
-		return studentID;
+		return sid;
 	}
 
 	public String getUnitCode() {
-		return unitCode;
+		return uc;
 	}
 
-	public void setAsg1(float mark) {
-		if (mark < 0 ||
-			mark > UnitManager.UM().getUnit(unitCode).getAsg1Weight()) {
+	public void setAsg1(float a1) {
+		if (a1 < 0 ||
+			a1 > UnitManager.UM().getUnit(uc).getAsg1Weight()) {
 			throw new RuntimeException("Mark cannot be less than zero or greater than assessment weight");
 		}
-		this.asg1 = mark;
+		this.a1 = a1;
 	}
 
 	public float getAsg1() {
 
-		return this.asg1;
+		return a1;
 	}
 
-	public void setAsg2(float mark) {
-		if (mark < 0 ||
-			mark > UnitManager.UM().getUnit(unitCode).getAsg2Weight()) {
+	public void setAsg2(float a2) {
+		if (a2 < 0 ||
+			a2 > UnitManager.UM().getUnit(uc).getAsg2Weight()) {
 			throw new RuntimeException("Mark cannot be less than zero or greater than assessment weight");
 		}
-		this.asg2 = mark;
+		this.a2 = a2;
 
 	}
 
 	public float getAsg2() {
-		return this.asg2;
+		return a2;
 	}
 
-	public void setExam(float mark) {
-		if (mark < 0 ||
-				mark > UnitManager.UM().getUnit(unitCode).getExamWeight()) {
+	public void setExam(float ex) {
+		if (ex < 0 ||
+				ex > UnitManager.UM().getUnit(uc).getExamWeight()) {
 				throw new RuntimeException("Mark cannot be less than zero or greater than assessment weight");
 			}
-		this.exam = mark;
+		this.ex = ex;
 	}
 
 	public float getExam() {
-		return this.exam;
+		return ex;
 	}
 
 	public float getTotal() {
-		return asg1 + asg2 + exam;
+		return a1 + a2 + ex;
 
 	}
 }

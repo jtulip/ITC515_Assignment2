@@ -5,6 +5,7 @@ public class cgCTL {
 	cgUI CGUI;
 	String cuc = null;
 	Integer currentStudentID = null;
+	boolean changed = false;
 
 	public cgCTL() {
 	}
@@ -17,6 +18,7 @@ public class cgCTL {
 		CGUI.setState3(false);
 		CGUI.setState4(false);
 		CGUI.setState5(false);
+		CGUI.setState6(false);
 		CGUI.Refresh3();
 
 		ListUnitsCTL luCTL = new ListUnitsCTL();
@@ -44,8 +46,8 @@ public class cgCTL {
 			CGUI.Refresh3();
 			CGUI.setState3(false);
 			CGUI.setState4(false);
-
 			CGUI.setState5(false);
+			CGUI.setState6(false);
 		}
 
 		else {
@@ -57,6 +59,8 @@ public class cgCTL {
 			CGUI.setState3(true);
 			CGUI.setState4(true);
 			CGUI.setState5(false);
+			CGUI.setState6(false);
+			changed = false;
 
 		}
 	}
@@ -64,13 +68,19 @@ public class cgCTL {
 	public String checkGrade(float f, float g, float h) {
 		IUnit u = UnitManager.UM().getUnit(cuc);
 		String s = u.getGrade(f, g, h);
+		CGUI.setState4(true);
+		CGUI.setState5(false);
+		if (changed) {
+			CGUI.setState6(true);
+		}
 		return s;
 	}
 
 	public void enableChangeMarks() {
-
 		CGUI.setState4(false);
+		CGUI.setState6(false);
 		CGUI.setState5(true);
+		changed = true;
 	}
 
 	public void saveGrade(float asg1, float asg2, float exam) {
@@ -84,8 +94,7 @@ public class cgCTL {
 		r.setExam(exam);
 		StudentUnitRecordManager.instance().saveRecord(r);
 		CGUI.setState4(true);
-
 		CGUI.setState5(false);
-
+		CGUI.setState6(false);
 	}
 }
