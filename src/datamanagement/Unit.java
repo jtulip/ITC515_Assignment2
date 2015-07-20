@@ -118,7 +118,7 @@ public class Unit implements IUnit {
 			ex < 0 || ex > 100 ) {
 			throw new RuntimeException("Assessment weights cant be less than zero or greater than 100");
 		}			
-		if (a1 + a2 + ex != 100 ) {
+		if (a1 + a2 + ex != 100) {
 			throw new RuntimeException("Assessment weights must add to 100");
 		}
 		this.a1 = a1;
